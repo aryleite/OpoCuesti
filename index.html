@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Banco de Questões</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Banco de Questões</h1>
+<p id="contador"></p>
+
+    <p id="enunciado">Carregando...</p>
+
+    <div class="alternativas">
+        <button id="altA" onclick="responder('A')"></button>
+        <button id="altB" onclick="responder('B')"></button>
+        <button id="altC" onclick="responder('C')"></button>
+    </div>
+
+    <p id="feedback"></p>
+
+    <div class="navegacao">
+        <button onclick="anterior()">Anterior</button>
+        <button onclick="proxima()">Próxima</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

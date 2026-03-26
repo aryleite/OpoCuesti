@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f3f5;
+    margin: 0;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* TÍTULO */
+h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* ENUNCIADO */
+#enunciado {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* BLOQUE DE ALTERNATIVAS */
+.alternativas {
+    margin-bottom: 10px;
+}
+
+/* BOTONES DE ALTERNATIVAS */
+.alternativas button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+/* HOVER */
+.alternativas button:hover {
+    background: #eef3ff;
+    border-color: #3b82f6;
+}
+
+/* RESPUESTA CORRECTA */
+.correta {
+    background-color: #d1fae5 !important;
+    border-color: #10b981 !important;
+}
+
+/* RESPUESTA INCORRECTA */
+.errada {
+    background-color: #fee2e2 !important;
+    border-color: #ef4444 !important;
+}
+
+/* FEEDBACK */
+#feedback {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* NAVEGACIÓN */
+.navegacao {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* BOTONES DE NAVEGACIÓN */
+.navegacao button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #3b82f6;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* HOVER BOTONES */
+.navegacao button:hover {
+    background-color: #2563eb;
+}
+
+/* BOTÓN DESACTIVADO */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

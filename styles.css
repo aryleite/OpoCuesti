@@ -1,102 +1,219 @@
+/* Configurações Globais */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f1f3f5;
+    background-color: #f4f7f6; /* Fundo cinza claro */
     margin: 0;
+    padding: 20px;
+    color: #333;
 }
 
-/* CONTENEDOR PRINCIPAL */
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.main-container {
+    max-width: 960px; /* Largura padrão para desktop */
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden; /* Garante que o cabeçalho azul fique dentro */
 }
 
-/* TÍTULO */
-h1 {
-    font-size: 20px;
-    margin-bottom: 20px;
+/* --- CABEÇALHO SUPERIOR (Matéria/Assunto) --- */
+.top-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    color: #777;
+    position: relative;
 }
 
-/* ENUNCIADO */
-#enunciado {
-    font-size: 18px;
-    margin-bottom: 20px;
+.quest-num {
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+}
+
+.resolvidas {
+    color: #888;
+    margin-left: 5px;
+}
+.acertos { color: #28a745; }
+.erros { color: #dc3545; }
+
+.top-meta p {
+    margin: 3px 0;
     line-height: 1.4;
 }
 
-/* BLOQUE DE ALTERNATIVAS */
-.alternativas {
-    margin-bottom: 10px;
+.top-meta a {
+    color: #007bff;
+    text-decoration: none;
+}
+.top-meta a:hover { text-decoration: underline; }
+
+/* Ícones do lado direito (fakes por enquanto) */
+.header-icons {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    display: flex;
+    gap: 10px;
+    color: #b0bec5;
 }
 
-/* BOTONES DE ALTERNATIVAS */
-.alternativas button {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 12px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    background: #fafafa;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.2s;
-    font-size: 15px;
-}
-
-/* HOVER */
-.alternativas button:hover {
-    background: #eef3ff;
-    border-color: #3b82f6;
-}
-
-/* RESPUESTA CORRECTA */
-.correta {
-    background-color: #d1fae5 !important;
-    border-color: #10b981 !important;
-}
-
-/* RESPUESTA INCORRECTA */
-.errada {
-    background-color: #fee2e2 !important;
-    border-color: #ef4444 !important;
-}
-
-/* FEEDBACK */
-#feedback {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-/* NAVEGACIÓN */
-.navegacao {
-    margin-top: 20px;
+/* --- BARRA DE INFORMAÇÕES (Banca/Ano) - O destaque azul --- */
+.banca-info-bar {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-/* BOTONES DE NAVEGACIÓN */
-.navegacao button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #3b82f6;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
+.banca-text {
+    color: #0056b3; /* Azul escuro */
+    font-weight: bold;
     font-size: 14px;
 }
 
-/* HOVER BOTONES */
-.navegacao button:hover {
-    background-color: #2563eb;
+.banca-text a {
+    color: #007bff; /* Azul claro para o ID */
+    text-decoration: none;
+    margin-right: 10px;
 }
 
-/* BOTÓN DESACTIVADO */
-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+/* Botões de navegação superiores */
+.nav-btns-top button {
+    background: none;
+    border: 1px solid #ccc;
+    color: #777;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* --- CONTEÚDO DA QUESTÃO (Enunciado/Texto) --- */
+.question-content {
+    padding: 25px 30px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+#enunciado-lei {
+    margin-bottom: 15px;
+}
+
+.texto-associado {
+    color: #007bff;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.texto-area {
+    margin-bottom: 30px;
+}
+
+/* --- ALTERNATIVAS --- */
+.alternativas-container {
+    padding: 0 30px 20px 30px;
+}
+
+.opcao-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #fbfbfb;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.opcao-item:hover {
+    background-color: #f1f1f1;
+}
+
+.letra-circulo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+    background: #fff;
+}
+
+.texto-opcao {
+    flex: 1;
+    font-size: 14px;
+}
+
+/* Estilo para quando selecionado */
+input[type="radio"] {
+    display: none; /* Esconde o rádio original */
+}
+
+input[type="radio"]:checked + .letra-circulo {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* --- BOTÃO RESPONDER --- */
+.action-bar {
+    padding: 10px 30px 30px 30px;
+}
+
+.btn-resolver {
+    background-color: #28a745; /* Verde do modelo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.btn-resolver:hover {
+    background-color: #218838;
+}
+
+/* --- BARRA DE NAVEGAÇÃO INFERIOR --- */
+.bottom-nav {
+    padding: 15px 30px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 5px;
+}
+
+.bottom-nav button {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* --- ÁREA DE COMENTÁRIO --- */
+.oculto { display: none; }
+.explicacion-box {
+    margin: 20px 30px;
+    padding: 15px;
+    background-color: #fff3cd;
+    border-left: 5px solid #ffeeba;
+    border-radius: 3px;
 }

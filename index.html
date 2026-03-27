@@ -1,33 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Banco de Questões</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado de Preguntas</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>Banco de Questões</h1>
-<p id="contador"></p>
-
-    <p id="enunciado">Carregando...</p>
-
-    <div class="alternativas">
-        <button id="altA" onclick="responder('A')"></button>
-        <button id="altB" onclick="responder('B')"></button>
-        <button id="altC" onclick="responder('C')"></button>
+<div class="main-container">
+    
+    <div class="top-header">
+        <div class="top-meta">
+            <span class="quest-num">Pregunta <span id="num-atual"></span> de <span id="num-total"></span></span>
+            <span class="resueltas">
+                <span class="resueltas">
+    (<span id="resueltas">0</span> Resueltas, 
+    <span id="acertos" style="color: #28a745;">0 Correctas</span> e 
+    <span id="erros" style="color: #dc3545;">0 Incorrectas</span>)
+</span>
+            <p>Tema: <a href="#" id="txt-tema"></a></p>
+            <p>Asunto: <a href="#" id="txt-asunto"></a></p>
+        </div>
     </div>
 
-    <p id="feedback"></p>
-
-    <div class="navegacao">
-        <button onclick="anterior()">Anterior</button>
-        <button onclick="proxima()">Próxima</button>
+    <div class="banca-info-bar"> <div class="banca-text">
+            <a href="#" class="id-pregunta">#<span id="txt-id"></span></a>
+            <span id="txt-oposicion"></span> - 
+            <span id="txt-ano"></span>
+        </div>
+        <div class="nav-btns-top">
+            <button onclick="anterior()"><i class="fas fa-arrow-left"></i></button>
+            <button onclick="proxima()"><i class="fas fa-arrow-right"></i></button>
+        </div>
     </div>
+
+    <div class="question-content">
+        <p id="enunciado-lei">Lea el texto a continuación.</p>
+        <div class="texto-associado">
+            <i class="fas fa-minus-circle"></i> Texto asociado
+        </div>
+        <div class="texto-area" id="enunciado">
+            </div>
+    </div>
+
+    <div class="alternativas-container">
+        <label class="opcao-item">
+            <input type="radio" name="opcao" value="A">
+            <span class="letra-circulo">A</span>
+            <span class="texto-opcao" id="label-a"></span>
+        </label>
+        <label class="opcao-item">
+            <input type="radio" name="opcao" value="B">
+            <span class="letra-circulo">B</span>
+            <span class="texto-opcao" id="label-b"></span>
+        </label>
+        <label class="opcao-item">
+            <input type="radio" name="opcao" value="C">
+            <span class="letra-circulo">C</span>
+            <span class="texto-opcao" id="label-c"></span>
+        </label>
+    </div>
+
+    <div class="action-bar">
+        <button onclick="verificar()" class="btn-resolver">Resolver Pregunta</button>
+    </div>
+
+    <div id="area-comentario" class="oculto">
+        <div class="explicacion-box">
+            <h4>Gabarito: <span id="gabarito"></span></h4>
+            <p id="texto-comentario"></p>
+        </div>
+    </div>
+
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
